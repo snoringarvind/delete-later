@@ -11,11 +11,15 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
-mongoose.connect(process.env.MONGODB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  process.env.MONGODB_URL,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  },
+  () => console.log("connected")
+);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
