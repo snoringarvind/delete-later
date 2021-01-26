@@ -3,23 +3,23 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const mongoose = require("mongoose");
-require("dotenv/config");
+// const mongoose = require("mongoose");
+// require("dotenv/config");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 var app = express();
 
-mongoose.connect(
-  process.env.MONGODB_URL,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  },
-  () => console.log("connected")
-);
+// mongoose.connect(
+//   process.env.MONGODB_URL,
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+//   },
+//   () => console.log("connected")
+// );
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
